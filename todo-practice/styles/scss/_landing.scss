@@ -1,0 +1,33 @@
+html {
+    background: #110101;
+    color: $primary-color;
+}
+#my-ul{
+    border: solid 2px $secondary-color;
+    li{
+        list-style: none;
+        background: #05490585;
+        border: solid 2px $secondary-color;
+        padding: 20px;
+        cursor: pointer;
+        
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+#my-ul li:hover {
+  background: #056e0585;
+}
+
+input{
+    background: #000000;
+    border: solid 2px $secondary-color;
+    color: $primary-color;
+}
+
+h2{
+    color: $secondary-color;
+    text-align: center;
+}
