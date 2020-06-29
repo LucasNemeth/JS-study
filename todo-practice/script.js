@@ -31,12 +31,10 @@ closeBtn = () =>{
 }
 
 // Add a "checked" symbol when clicking on a list item
-let list = $('ul');
-$('ul').on('click', function(ev){
-    if (ev.target.tagName === 'li'){
-        ev.target.classList.toggle('checked');
-    }
-}, false);
+let list = $('li')
+list.on('click', function(){
+    $(this).toggleClass("checked");
+});
 
 
 // Create a new list item when clicking on the "Add" button
