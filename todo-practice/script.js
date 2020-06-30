@@ -14,7 +14,7 @@ closeBtn = () =>{
         let span = document.createElement("span");
         let txt = document.createTextNode("\u00D7");
         span.className = "close";
-        console.log(myNodeList[i])
+        // console.log(myNodeList[i])
         span.appendChild(txt);
         // myNodeList[i].appendChild(span);
         if (myNodeList[i].childNodes.length <= 1){
@@ -31,11 +31,20 @@ closeBtn = () =>{
 }
 
 // Add a "checked" symbol when clicking on a list item
-let list = $('li')
-list.on('click', function(){
+function completeToDoItem(){
     $(this).toggleClass("checked");
-});
+}
 
+let list = document.querySelector('ul');
+// list.on('click', function(){
+//     $(this).children('li').toggleClass("checked");
+// });
+// list.on('click', $('li'), completeToDoItem());
+list.addEventListener('click', function (ev) {
+    if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+    }
+}, false);
 
 // Create a new list item when clicking on the "Add" button
 newElement= () => {
@@ -48,6 +57,7 @@ newElement= () => {
     }else{
         document.getElementById("my-ul").appendChild(li);
     }
+
     closeBtn(); 
     $("#my-input").val("");
 }
