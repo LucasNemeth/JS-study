@@ -6,6 +6,8 @@ $(function() {
 const myNodeList = document.getElementsByTagName("LI");
 let i;
 
+
+
 closeBtn = () =>{
     //target all nodes with a class of close
     // $('.close').remove();
@@ -48,6 +50,7 @@ list.addEventListener('click', function (ev) {
 
 // Create a new list item when clicking on the "Add" button
 newElement= () => {
+    // e.preventDefault;/
     let li = document.createElement('li');
     const inputValue = $('#my-input').val();
     let inputText = document.createTextNode(inputValue);
@@ -58,6 +61,27 @@ newElement= () => {
         document.getElementById("my-ul").appendChild(li);
     }
 
+
     closeBtn(); 
     $("#my-input").val("");
 }
+
+let todolist = [
+    {
+        item: 'takr out trash',
+        complete: 'true'
+    },
+    {
+        item: 'takr out trash',
+        complete: 'true'
+    }, {
+        item: 'takr out trash',
+        complete: 'true'
+    }, {
+        item: 'takr out trash',
+        complete: 'true'
+    },
+];
+
+window.localStorage.todolist = todolist
+
