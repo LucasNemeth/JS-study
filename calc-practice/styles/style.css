@@ -26,9 +26,13 @@ html{
     margin-top: 200px;
 }
 
+.calc-display{
+    font-size: 2rem;
+}
+
 .calc-keys{
     display: inline-grid;
-    grid-template-columns: 25% 25% 25% 25% ;
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
     /* grid-template-columns: 4; */
 }
@@ -48,6 +52,12 @@ html{
     color:#16d116;
 }
 
-.calc-display{
-    font-size: 2rem;
+.is-clear{
+    grid-column: span 3;
+    width:100%;
+}
+
+.key--equal{
+    grid-column: span 2;
+    width: 100%;
 }
