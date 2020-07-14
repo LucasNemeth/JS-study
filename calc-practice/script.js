@@ -9,28 +9,67 @@
 
 const calculator = document.querySelector('.calculator');
 const keys = document.querySelector('.calc-keys');
+const display = document.querySelector('.calc-display');
 
 keys.addEventListener('click', e =>{
     if (e.target.matches('button')){
         const key = e.target;
         const action = key.dataset.action;
+        const keyContent =key.textContent;
+        const displayedNum = display.textContent;
+        const previousKeyType = calculator.dataset.previousKeyType;
+
+
         if (!action) {
-            console.log("hey are ya working?")
-        } else if(
+            if (displayedNum === '0' || previousKeyType ==="operator") {
+                display.textContent = keyContent;
+            } else {
+                display.textContent = displayedNum + keyContent;
+            }
+            // console.log("hey are ya working?")
+        } if(
             action === "add" ||
             action === "subtract" ||
             action === "divide" ||
             action === "multiply"
-        ){
-            console.log("I can do math")
-        } else if(action === "decimal"){
-            console.log("dot dot dot")
-        } else if (action === "calculate"){
-            console.log("the great equalizer")
-        } else if (action ==="clear"){
+        )
+        
+        {
+            key.classList.add('is-depressed');
+            calculator.dataset.previousKeyType = 'operator';
+        //if user clicks the decimal
+        }
+        {
+            calculator.dataset.firstValue = displayedNum;
+            calculator.dataset.operator = action
+        }
+        if(action === "decimal"){
+            display.textContent = displayedNum + ".";
+        }  if (action === "calculate"){
+            const firstValue= calculator.dataset.firstValue;
+            const operator = calculator.dataset.operator;
+            const secondValue = displayedNum
+
+            display.textContent=calculate(firstValue, operator, secondValue)
+        } if (action ==="clear"){
+            display.textContent = "0"
             console.log("byebye")
         }
+        Array.from(key.parentNode.children)
+            .forEach(k => k.classList.remove(".is-depressed"));
+
+        //having it so we replace the placeholder display number with the number keys we hit
+        // if(!action){
+        //     if (displayedNum === '0'){
+        //         display.textContent = keyContent;
+        //     } else {
+        //         display.textContent = displayedNum + keyContent;
+        //     }
+        // }
     }
 });
+
+//1. on click of number keys. show that number in the display
+// const display = document.querySelector('.calc-display');
 
 
