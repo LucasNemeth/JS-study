@@ -29,7 +29,11 @@ html{
 .calc-display{
     font-size: 2rem;
 }
-
+.is-depressed{
+    background: #0f8a0f6b ;
+    color: greenyellow ;
+    border:1px solid green ;
+}
 .calc-keys{
     display: inline-grid;
     grid-template-columns: repeat(4, 1fr);
@@ -52,6 +56,8 @@ html{
     color:#16d116;
 }
 
+
+
 .is-clear{
     grid-column: span 3;
     width:100%;
@@ -62,8 +68,3 @@ html{
     width: 100%;
 }
 
-.is-depressed{
-    background: #0f8a0f6b ;
-    color: greenyellow ;
-    border:1px solid green ;
-}

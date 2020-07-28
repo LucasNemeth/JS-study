@@ -18,7 +18,7 @@ keys.addEventListener('click', e =>{
         const keyContent =key.textContent;
         const displayedNum = display.textContent;
         const previousKeyType = calculator.dataset.previousKeyType;
-
+        
 
         if (!action) {
             if (displayedNum === '0' || previousKeyType ==="operator") {
@@ -50,13 +50,33 @@ keys.addEventListener('click', e =>{
             const operator = calculator.dataset.operator;
             const secondValue = displayedNum
 
-            display.textContent=calculate(firstValue, operator, secondValue)
+            
+
+            const calculate = (n1, operator, n2) => {
+                let result = '';
+
+                if (operator === 'add') {
+                    result = parseFloat(n1) + parseFloat(n2);
+                    console.log("hi", result)
+                } else if (operator === 'subtract') {
+                    result = parseFloat(n1) - parseFloat(n2);
+                } else if (operator === 'multiply') {
+                    result = parseFloat(n1) * parseFloat(n2);
+                } else if (operator === 'divide') {
+                    result = parseFloat(n1) / parseFloat(n2)
+                }
+                console.log(result)
+                return result
+            }
+            display.textContent = calculate(firstValue, operator, secondValue)
         } if (action ==="clear"){
             display.textContent = "0"
-            console.log("byebye")
+            // console.log("byebye")
         }
         Array.from(key.parentNode.children)
             .forEach(k => k.classList.remove(".is-depressed"));
+        
+        // calculate()
 
         //having it so we replace the placeholder display number with the number keys we hit
         // if(!action){
