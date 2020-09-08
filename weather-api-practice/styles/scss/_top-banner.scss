@@ -1,5 +1,5 @@
 .top-banner {
-  color: var(--text_light);
+  color: var(--text_med);
 }
  
 .heading {
@@ -7,41 +7,45 @@
   font-size: 4rem;
   letter-spacing: 0.02em;
   padding: 0 0 30px 0;
+  color: var(--text_light);
 }
  
-.top-banner form {
+.search-submit {
   position: relative;
   display: flex;
   align-items: center;
+    input {
+        font-size: 2rem;
+        height: 40px;
+        padding: 5px 5px 10px;
+        border-bottom: 2px solid var(--text_dark);
+        background: var(--text_light);
+    }
+     button {
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        padding: 15px 20px;
+        margin-left: 15px;
+        border-radius: 5px;
+        background: var(--primary);
+        transition: background 0.3s ease-in-out;
+        border: 2px solid var(--secondary)
+    }
 }
  
-.top-banner form input {
-  font-size: 2rem;
-  height: 40px;
-  padding: 5px 5px 10px;
-  border-bottom: 1px solid;
+
+ 
+.search-submit input::placeholder {
+  color: grey; 
 }
  
-.top-banner form input::placeholder {
-  color: currentColor; 
-}
  
-.top-banner form button {
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  padding: 15px 20px;
-  margin-left: 15px;
-  border-radius: 5px;
-  background: var(--primary);
-  transition: background 0.3s ease-in-out;
-}
- 
-.top-banner form button:hover {
+.search-submit button:hover {
   background: var(--secondary);
 }
  
-.top-banner form .msg {
+.search-submit .msg {
   position: absolute;
   bottom: -40px;
   left: 0;
@@ -50,20 +54,20 @@
 }
  
 @media screen and (max-width: 700px) {
-  .top-banner form {
+  .search-submit {
     flex-direction: column;
   }
    
-  .top-banner form input,
-  .top-banner form button {
+  .search-submit input,
+  .search-submit button {
     width: 100%;
   }
  
-  .top-banner form button {
+  .search-submit button {
     margin: 20px 0 0 0;
   }
    
-  .top-banner form .msg {
+  .search-submit .msg {
     position: static;
     max-width: none;
     min-height: 0;
