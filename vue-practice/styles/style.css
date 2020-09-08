@@ -81,6 +81,7 @@
   .tab {
     margin-left: 20px;
     cursor: pointer;
+    text-decoration: rtl;
   }
 
   .activeTab {

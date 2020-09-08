@@ -93,3 +93,109 @@ keys.addEventListener('click', e =>{
 // const display = document.querySelector('.calc-display');
 
 
+//Let's try another script, cuz this above one ain't really working
+// (function() {
+//     console.log("can you hear me?")
+//     "use strict";
+
+//     //a way for us to get us elements quick
+//     let el = function(element) {
+//         if (element.charAt(0) === "#")
+//         { 
+//             //if it passed an ID
+//             return document.querySelector(element);
+//             //returns a single element
+//         } 
+
+//         return document.querySelectorAll(element);
+//         //otherwise,  returns the nodelist
+//     };
+
+//     const display = el(".display"),
+//     equals = el(".equal"),
+//     nums = el(".num"),
+//     ops= el(".operator"),
+//     theNum = "",
+//     oldNum = "",
+//     resultNum = "",
+//     operator = "";
+
+//     //when number is clicked, get the current number selected.
+//     const setNum = function(){
+//         if (resultNum){
+//             theNum = this.getAttribute("data-num");
+//             resultNum = "";
+//         } else {
+//             theNum += this.getAttribute("data-num");
+//         }
+//         display.innerHTML = theNum;
+//     };
+//     // when the operator is clicked, pass the number to oldNum  and save the operator
+//     const moveNum = function(){
+//         oldNum = theNum;
+//         theNum = "";
+//         operator = this.getAttribute("data-ops");
+//         equals.setAttribute("data-result", "");  // reset the result in attr
+//     };
+
+//     const displayNum = function(){
+//         oldNum = parseFloat(oldNum);
+//         theNum = parseFloat(theNum);
+
+//         switch(operator) {
+//             case "plus": resultNum = oldNum + theNum;
+//             break;
+            
+//             case "minus": 
+//             resultNum = oldNum - theNum;
+//             break;
+
+//             case "times":
+//             resultNum = oldNum * theNum;
+//             break; 
+
+//             case "divided by":
+//             resultNum = oldNum / theNum;
+//             break;
+
+//             //if equal is pressed w/o an op, keep number and continue
+//             default:
+//                 resultNum = theNum;
+//         }
+//         //if NaN or infinity is returned
+//         if(!isFinite(resultNum)){
+//             if(isNaN(resultNum)){
+//                 resultNum = "you broke it, y'dangus!";
+//             } else {
+//                 //if result is infinity
+//                 resultNum="OH NOOOO";
+
+//                 // el('#calculator').classList.add("broken"); //break calculator
+
+//                 // el("#reset").classList.add("show");
+//             }
+//         }
+
+//         //now to display the results
+//         display.innerHTML = resultNum;
+//         equals.setAttribute('data-result', resultNum);
+
+//         oldNum = 0;
+//         theNum = resultNum;
+//     };
+//     const clearAll = function(){
+//         oldNum = "";
+//         theNum = "";
+//         display.innerHTML = "0";
+//         equals.setAttribute("data-result",resultNum);
+//     };
+
+//     //click evento!
+//     for(let i = 0, l = nums.length; i < l; i++){
+//         nums[i].onclick = setNum;
+//     }
+
+//     for (let i = 0, l = ops.length; i < l; i++){
+//         ops[i].onclick = moveNum;
+//     }
+// }());
