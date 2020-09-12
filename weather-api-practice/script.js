@@ -44,33 +44,38 @@ form.addEventListener("submit", event =>{
     }
     
     console.log(inputVal)
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&APPID=${apiKey}&units=metric`;
-    const farurl = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&APPID=${apiKey}&units=imperial`;
+    // const celsius = (Math.round(parseFloat(w.main.temp) - 273.15));
+    // const fahrenheit = (Math.round(((parseFloat(w.main.temp) - 273.15) * 1.8) + 32));
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&APPID=${apiKey}`;
     fetch(url)
         .then(response=>response.json())
         .then(data =>{
             const { main, name, sys, weather} = data;
             const icon = `https://openweathermap.org/img/wn/${
                 weather[0]["icon"]
-        }@2x.png`;
-            
+        }.png`;
+            const celsius = (Math.round(parseFloat(main.temp) - 273.15));
+            console.log(celsius)
+            const fahrenheit = (Math.round(((parseFloat(main.temp) - 273.15) * 1.8) + 32));
             const li = document.createElement('li');
                 li.classList.add("city");
                 const markup = `<h2 class="city-name" data-name="${name},${sys.country}">
                 <span>${name}</span>
                 <sup>${sys.country}</sup>
                 </h2>
-                <div class="city-temp">${Math.round(main.temp)}
-                <sup>°C</sup></div>
+                <div class="city-temp">${celsius}
+                <sup>°C /</sup>${fahrenheit}<sup>°F</sup></div> 
                 <figure>
-                    <i class="city-icon" src=${icon} alt=${weather[0]["main"]}>
+                    <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
                     <figcaption>${weather[0]["description"]}</figcaption>
                 </figure>`;
 
                 li.innerHTML = markup;
                 list.appendChild(li);
-        })
+            console.log(data)
+        }
+        )
+        
         .catch(()=>{
             msg.textContent="Please search for a valid city";
         });
