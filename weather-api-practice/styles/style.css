@@ -1,11 +1,12 @@
 @charset "UTF-8";
 :root {
-  --bg_main: #5f7e66;
-  --text_light: #ebecd4;
-  --text_med: #915050;
-  --text_dark: #072c0e;
-  --primary: #f1842b;
-  --secondary: #a15804;
+  --bg_main: #130936;
+  --text_light: #d1d1d1;
+  --section_bg:#e7bbd5;
+  --text_med: #b82b2b;
+  --text_dark: #19042b;
+  --primary: #e02f55;
+  --secondary: #610817;
   --tertiary: #ff8c00;
 }
 
@@ -270,8 +271,8 @@ input {
 
 img {
   display: block;
-  max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 ul {
@@ -282,6 +283,11 @@ body {
   font: 1rem/1.3 "Roboto", sans-serif;
   background: var(--bg_main);
   padding: 50px;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
 }
 
 .top-banner {
@@ -308,10 +314,10 @@ body {
 
 .search-submit input {
   font-size: 2rem;
-  height: 40px;
   padding: 5px 5px 10px;
-  border-bottom: 2px solid var(--text_dark);
-  background: var(--text_light);
+  color: var(--text_light);
+  background: rgba(255, 255, 255, 0.068);
+  border: 2px solid var(--primary);
 }
 
 .search-submit button {
@@ -325,6 +331,11 @@ body {
   -webkit-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
   border: 2px solid var(--secondary);
+}
+
+h3 {
+  margin-top: 0;
+  color: var(--text_light);
 }
 
 .search-submit input::-webkit-input-placeholder {
@@ -377,12 +388,20 @@ body {
   }
 }
 
+.cities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .ajax-section .city {
   position: relative;
   padding: 40px 10%;
   border-radius: 20px;
-  background: var(--text_light);
+  background: var(--section_bg);
   color: var(--text_med);
+  margin: 20px;
+  min-width: 210px;
 }
 
 .ajax-section .city::after {
@@ -395,7 +414,6 @@ body {
   z-index: -1;
   opacity: 0.3;
   border-radius: 20px;
-  background: var(--text_light);
 }
 
 .ajax-section figcaption {
@@ -405,7 +423,7 @@ body {
 }
 
 .ajax-section .city-temp {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   margin-top: 10px;
   color: var(--text_dark);

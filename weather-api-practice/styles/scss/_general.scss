@@ -23,8 +23,9 @@ input {
  
 img {
   display: block;
-  max-width: 100%;
+  // max-width: 100%;
   height: auto;
+  width: 100%;
 }
  
 ul {
@@ -36,4 +37,9 @@ body {
   background: var(--bg_main);
 //   color: var(--text_med);
   padding: 50px;
+}
+
+figure {
+  margin:0;
+  text-align: center;
 }

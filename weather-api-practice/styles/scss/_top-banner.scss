@@ -16,10 +16,12 @@
   align-items: center;
     input {
         font-size: 2rem;
-        height: 40px;
+        // height: 40px;
         padding: 5px 5px 10px;
-        border-bottom: 2px solid var(--text_dark);
-        background: var(--text_light);
+        color: var(--text_light);
+        // border-bottom: 2px solid var(--text_dark);
+        background:rgba(255, 255, 255, 0.068);
+        border: 2px solid var(--primary);
     }
      button {
         font-size: 1rem;
@@ -32,6 +34,10 @@
         transition: background 0.3s ease-in-out;
         border: 2px solid var(--secondary)
     }
+}
+h3{
+  margin-top: 0;
+  color: var(--text_light);
 }
  
 
