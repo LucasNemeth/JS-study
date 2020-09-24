@@ -75,7 +75,7 @@ form.addEventListener("submit", event =>{
 
                 li.innerHTML = markup;
                 list.appendChild(li);
-            console.log(data)
+            console.log(data, "Testing")
         }
         )
         
