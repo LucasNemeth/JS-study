@@ -310,6 +310,7 @@ figure {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 20px;
 }
 
 .search-submit input {
@@ -318,6 +319,7 @@ figure {
   color: var(--text_light);
   background: rgba(255, 255, 255, 0.068);
   border: 2px solid var(--primary);
+  border-radius: 10px;
 }
 
 .search-submit button {
@@ -367,6 +369,9 @@ h3 {
 }
 
 @media screen and (max-width: 700px) {
+  .heading {
+    font-size: 3rem;
+  }
   .search-submit {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -411,12 +416,14 @@ h3 {
   background: var(--section_bg);
   color: var(--text_med);
   margin: 20px;
-  min-width: 400px;
 }
 
 .ajax-section .city .remove-button {
   background: none;
   border: none;
+  position: absolute;
+  top: 50px;
+  right: 20px;
 }
 
 .ajax-section .city::after {
@@ -442,6 +449,7 @@ h3 {
   font-weight: bold;
   margin-top: 10px;
   color: var(--text_dark);
+  text-align: center;
 }
 
 .ajax-section .city sup {
@@ -469,4 +477,25 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 520px) {
+  .city {
+    width: 250px;
+  }
+  .city .city-temp {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cities {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cities .city {
+    width: 220px;
+  }
 }

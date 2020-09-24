@@ -21,10 +21,13 @@
   background: var(--section_bg);
   color: var(--text_med);
   margin: 20px;
-  min-width: 400px;
+  // min-width: 300px;
   .remove-button{
     background: none;
     border:none;
+    position: absolute;
+    top:50px;
+    right:20px;
   }
 }
  
@@ -52,6 +55,7 @@
   font-weight: bold;
   margin-top: 10px;
   color: var(--text_dark);
+  text-align: center;
 }
  
 .ajax-section .city sup {
@@ -79,3 +83,20 @@
   display:flex;
 }
 
+@media screen and (max-width:520px){
+  .city{
+    width:250px;
+    .city-temp{
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width:400px){
+  .cities{
+    flex-direction: column;
+    .city{
+      width:220px;
+    }
+  }
+}
