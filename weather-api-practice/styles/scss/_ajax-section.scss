@@ -1,15 +1,31 @@
+
+.ajax-section .wrapper{
+  margin:0 auto;
+  max-width: 1080px;
+  background: #ffffff81;
+  border-radius: 25px;
+  margin: 20px 0;
+}
+
 .cities{
   display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  
 }
 
 .ajax-section .city {
   position: relative;
-  padding: 40px 10%;
+  padding: 40px 20px;
   border-radius: 20px;
   background: var(--section_bg);
   color: var(--text_med);
   margin: 20px;
-  min-width: 210px;
+  min-width: 400px;
+  .remove-button{
+    background: none;
+    border:none;
+  }
 }
  
 .ajax-section .city::after {
@@ -45,7 +61,7 @@
 .ajax-section .city-name sup {
   padding: 0.2em 0.6em;
   border-radius: 30px;
-  color: var(--text_light);
+  color: var(--text_dark);
   background: var(--orange);
 }
  
@@ -57,5 +73,9 @@
 
 .hidden {
   display: none;
+}
+
+.city-header{
+  display:flex;
 }
 

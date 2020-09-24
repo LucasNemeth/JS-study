@@ -59,10 +59,13 @@ form.addEventListener("submit", event =>{
             const fahrenheit = (Math.round(((parseFloat(main.temp) - 273.15) * 1.8) + 32));
             const li = document.createElement('li');
                 li.classList.add("city");
-                const markup = `<h2 class="city-name" data-name="${name},${sys.country}">
+                const markup = `
+                <h2 class="city-name" data-name="${name},${sys.country} ">
                 <span>${name}</span>
                 <sup>${sys.country}</sup>
+                
                 </h2>
+                <button href="#" class="remove-button" onclick="remove(this)"><i class="fas fa-times"></i></button>
                 <div class="city-temp">${celsius}
                 <sup>°C /</sup>${fahrenheit}<sup>°F</sup></div> 
                 <figure>
@@ -87,6 +90,9 @@ form.addEventListener("submit", event =>{
 
 });
 
+function remove(link) { 
+    link.parentNode.parentNode.removeChild(link.parentNode);
+}
 
 
 
