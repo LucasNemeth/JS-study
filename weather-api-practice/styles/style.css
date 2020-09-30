@@ -270,7 +270,7 @@ input {
 }
 
 img {
-  display: block;
+  display: inline-block;
   height: auto;
   width: 100%;
 }
@@ -281,8 +281,14 @@ ul {
 
 body {
   font: 1rem/1.3 "Roboto", sans-serif;
-  background: var(--bg_main);
+  background: #020024;
+  background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(47%, #260552), to(#55a5f0));
+  background: linear-gradient(180deg, #020024 0%, #260552 47%, #55a5f0 100%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
   padding: 50px;
+  height: 100vh;
 }
 
 figure {

@@ -24,7 +24,7 @@ input {
 }
  
 img {
-  display: block;
+  display: inline-block;
   // max-width: 100%;
   height: auto;
   width: 100%;
@@ -36,9 +36,15 @@ ul {
  
 body {
   font: 1rem/1.3 "Roboto", sans-serif;
-  background: var(--bg_main);
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(38,5,82,1) 47%, rgba(85,165,240,1) 100%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  // background: var(--bg_main);
 //   color: var(--text_med);
   padding: 50px;
+  height: 100vh;
 }
 
 figure {
